@@ -531,7 +531,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
     <details class="appx">
       <summary>查看完整评测结果</summary>
       <div class="tbl-wrap" tabindex="0" aria-label="完整评测表，可横向滚动"><table class="full" id="full"></table></div>
-      <p class="note">▲ 为该行最优结果。空白表示尚未报告。MMLU-Pro 使用 1000 题子集。Qwen3.8 Coder390 的完整模型见 <a href="https://huggingface.co/nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2" style="color:var(--accent)">HuggingFace</a>。</p>
+      <p class="note">▲ 为该行最优结果。空白表示尚未报告。“—”表示 IndustrialCoder 32B 不支持多模态，因此没有多模态评测分数。MMLU-Pro 使用 1000 题子集。Qwen3.8 Coder390 的完整模型见 <a href="https://huggingface.co/nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2" style="color:var(--accent)">HuggingFace</a>。</p>
     </details>
   </div>
 </section>
@@ -672,7 +672,7 @@ const DEMOS=[
   let html=`<thead><tr class="h1"><th rowspan="2" scope="col">评测</th><th rowspan="2" scope="col" class="me">${ME}</th>${COLS.slice(1).map(([g,l])=>`<th colspan="${l.length}" scope="colgroup" class="gs ghead">${g}</th>`).join('')}</tr><tr class="h2">${models.slice(1).map(m=>`<th scope="col"${starts.has(m)?' class="gs"':''}>${showName(m)}</th>`).join('')}</tr></thead><tbody>`,last='';
   DATA.filter(r=>r.vals[ME]!==undefined).forEach(r=>{const sec=SECTION[r.mod];if(sec!==last){html+=`<tr class="grp"><th colspan="1" scope="colgroup">${sec}</th><td colspan="${models.length}" style="background:var(--surface-2)"></td></tr>`;last=sec}
     const nums=models.map(m=>r.vals[m]).filter(v=>typeof v==='number'),best=nums.length>1?Math.max(...nums):null;
-    html+=`<tr><th scope="row">${benchName(r)}${r.sub?`<small>${SUB[r.sub]||r.sub}</small>`:''}</th>${models.map(m=>{const v=r.vals[m];return `<td class="${[cls(m),v===best?'best':''].filter(Boolean).join(' ')}">${v===undefined?'':fmt(v)}</td>`}).join('')}</tr>`});
+    html+=`<tr><th scope="row">${benchName(r)}${r.sub?`<small>${SUB[r.sub]||r.sub}</small>`:''}</th>${models.map(m=>{const v=r.vals[m];return `<td class="${[cls(m),v===best?'best':''].filter(Boolean).join(' ')}">${v===undefined?(r.mod==='多模态'&&m==='IndustrialCoder 32B'?'<span title="不支持多模态">—</span>':''):fmt(v)}</td>`}).join('')}</tr>`});
   $('#full').innerHTML=html+'</tbody>'})();
 
 /* 待确认计数：发布前去掉 html 上的 data-draft 后不再显示 */
