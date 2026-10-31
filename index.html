@@ -120,9 +120,10 @@ h1{margin-top:0;font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:70
 .db-head .db-v,.db-head .db-g{font-family:var(--sans);font-weight:400;color:#7f8998}
 
 /* 首屏案例对比 */
-.hero-cases{margin-top:clamp(20px,3vw,32px)}
-.hero-cases .chart-title h3{color:#f1f7f7}
-.hero-cases .chart-title{margin-bottom:12px}
+.hero-cases{margin-top:clamp(24px,3.5vw,40px)}
+.hero-cases .chart-title{justify-content:center;text-align:center;margin-bottom:16px}
+.hero-cases .chart-title h3{font-size:clamp(19px,2.3vw,26px);font-weight:700;letter-spacing:-.005em;color:#f1f7f7;text-wrap:balance}
+.case-no{display:block;font:500 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#4fd6a0;margin-bottom:6px}
 .case-grid{display:grid;grid-template-columns:1fr;gap:clamp(12px,1.8vw,20px)}
 .case-grid figure{margin:0}
 .case-cap{margin-top:8px;font-size:13px;color:#9aa4b1;display:flex;align-items:center;gap:8px}
@@ -395,6 +396,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
     </div>
     <div class="hero-cases">
       <div class="chart-title">
+<span class="case-no">Case 01 · 代码问答</span>
         <h3>实际案例：硬件代码问答，Micius-Flash-Preview 对比 DeepSeek V4 Pro</h3>
       </div>
       <div class="case-grid">
@@ -406,6 +408,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
     </div>
     <div class="hero-cases">
       <div class="chart-title">
+<span class="case-no">Case 02 · 知识问答</span>
         <h3>实际案例：半导体知识问答，Micius-Flash-Preview 对比 DeepSeek V4 Pro</h3>
       </div>
       <div class="case-grid">
