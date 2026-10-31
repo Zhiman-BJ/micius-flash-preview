@@ -80,8 +80,8 @@
 | --- | --- |
 | [在线体验](https://platform.zhiman.cn/console/chat) | ✅ 已开放 |
 | [API 接入](https://platform.zhiman.cn/console) | ✅ 已开放 |
-| HuggingFace 权重 | 🔜 Coming soon |
-| 技术报告 | 🔜 Coming soon |
+| 🤗 Hugging Face 权重 | 🔜 Coming soon |
+| 📄 技术报告 | 🔜 Coming soon |
 
 ---
 
