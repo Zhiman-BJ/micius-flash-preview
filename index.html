@@ -732,7 +732,8 @@ const DEMOS=[
 /* 完整评测表 */
 (()=>{const COLS=[
     ['',[ME]],
-    ['开放模型',[BASE,'Coder390','Gemma4-26B','Muse Glimmer 30B','IndustrialCoder 32B','DeepSeek V4.1 Flash','DeepSeek-V4-Pro','Kimi K2.6','GLM-5.3-Flash','MiniMax M3','Hy3']],
+    ['同规模开放模型',[BASE,'Coder390','Gemma4-26B','Muse Glimmer 30B','IndustrialCoder 32B']],
+    ['其他开放模型',['DeepSeek V4.1 Flash','DeepSeek-V4-Pro','Kimi K2.6','GLM-5.3-Flash','MiniMax M3','Hy3']],
     ['闭源模型',[GPT,'Claude Opus 5','Claude Sonnet 5']]];
   const models=COLS.flatMap(c=>c[1]),starts=new Set(COLS.slice(1).map(c=>c[1][0]));
     const cls=m=>[m===ME?'me':'',starts.has(m)?'gs':''].filter(Boolean).join(' ');
