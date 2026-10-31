@@ -123,17 +123,18 @@ h1{margin-top:0;font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:70
 .hero-cases{margin-top:clamp(20px,3vw,32px)}
 .hero-cases .chart-title h3{color:#f1f7f7}
 .hero-cases .chart-title{margin-bottom:12px}
-.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,20px)}
+.case-grid{display:grid;grid-template-columns:1fr;gap:clamp(12px,1.8vw,20px)}
 .case-grid figure{margin:0}
 .case-cap{margin-top:8px;font-size:13px;color:#9aa4b1;display:flex;align-items:center;gap:8px}
 .case-lang{flex:none;padding:1px 7px;border-radius:4px;background:#ffffff14;border:1px solid #ffffff1f;font:500 11px/1.7 var(--mono);letter-spacing:.06em;color:#4fd6a0}
 
-/* 品牌视频与语言切换 */
+/* 品牌视频 */
 .hero-film{margin-top:clamp(20px,3vw,32px)}
-.film-tabs{display:flex;justify-content:center;gap:4px;margin-bottom:12px}
-.film-tab{padding:5px 16px;border-radius:999px;border:1px solid #ffffff2e;background:#ffffff0d;color:#c3cad3;font-size:13px;font-weight:500;transition:background .15s,border-color .15s,color .15s}
-.film-tab:hover{background:#ffffff1f}
-.film-tab[aria-selected=true]{background:#f1f7f7;border-color:#f1f7f7;color:#0b1210}
+/* 导航栏语言切换 */
+.lang-tabs{display:flex;gap:2px;padding:2px;border:1px solid #2e3640;border-radius:999px}
+.lang-tab{padding:3px 11px;border-radius:999px;font-size:12px;font-weight:500;color:#c3cad3;transition:background .15s,color .15s}
+.lang-tab:hover{color:#fff}
+.lang-tab[aria-selected=true]{background:#f1f7f7;color:#0b1210}
 .axis{position:absolute;top:2px;font:400 11px var(--mono);transform:translateX(-50%)}
 .axis:first-child{transform:none}.axis:last-child{transform:translateX(-100%)}
 
@@ -343,6 +344,10 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       <a href="#overview">概览</a><a href="#capability">核心能力</a><a href="#tech">技术路线</a><a href="#eval">评测</a><a href="#harness">工程应用</a><a href="#deploy">部署</a>
     </div>
     <div class="nav-right">
+      <div class="lang-tabs" role="tablist" aria-label="语言切换 Language">
+        <button class="lang-tab" role="tab" data-lang="zh" aria-selected="true">中文</button>
+        <button class="lang-tab" role="tab" data-lang="en" aria-selected="false">EN</button>
+      </div>
       <button class="icon-btn" id="theme" aria-label="切换明暗主题">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
@@ -368,11 +373,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </div>
     </div>
     <div class="hero-film">
-      <div class="film-tabs" role="tablist" aria-label="视频语言切换">
-        <button class="film-tab" role="tab" aria-selected="true" data-lang="zh">中文</button>
-        <button class="film-tab" role="tab" aria-selected="false" data-lang="en">English</button>
-      </div>
-      <video id="film" class="demo-video" controls playsinline preload="metadata" poster="assets/film-zh.jpg" aria-label="Micius 品牌视频"><source src="assets/film-zh.mp4" type="video/mp4"></video>
+      <video id="film" class="demo-video" controls playsinline preload="metadata" poster="assets/film-zh.jpg" aria-label="Micius 品牌视频" data-zh-src="assets/film-zh.mp4" data-zh-poster="assets/film-zh.jpg" data-en-src="assets/film-en.mp4" data-en-poster="assets/film-en.jpg"><source src="assets/film-zh.mp4" type="video/mp4"></video>
     </div>
     <div class="hero-card">
       <div>
@@ -398,12 +399,8 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </div>
       <div class="case-grid">
         <figure>
-          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-clkdiv-zh.jpg" aria-label="中文案例：奇数分频器代码问答，Micius-Flash-Preview 对比 DeepSeek V4 Pro"><source src="assets/case-clkdiv-zh.mp4" type="video/mp4"></video>
-          <figcaption class="case-cap"><span class="case-lang">中文</span>奇数分频器 · 代码与执行</figcaption>
-        </figure>
-        <figure>
-          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-clkdiv-en.jpg" aria-label="English case: odd clock divider code Q&amp;A, Micius-Flash-Preview vs DeepSeek V4 Pro"><source src="assets/case-clkdiv-en.mp4" type="video/mp4"></video>
-          <figcaption class="case-cap"><span class="case-lang">EN</span>Odd Clock Divider · Code &amp; Execution</figcaption>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-clkdiv-zh.jpg" aria-label="案例：奇数分频器代码问答，Micius-Flash-Preview 对比 DeepSeek V4 Pro" data-zh-src="assets/case-clkdiv-zh.mp4" data-zh-poster="assets/case-clkdiv-zh.jpg" data-en-src="assets/case-clkdiv-en.mp4" data-en-poster="assets/case-clkdiv-en.jpg"><source src="assets/case-clkdiv-zh.mp4" type="video/mp4"></video>
+          <figcaption class="case-cap" data-zh-cap="奇数分频器 · 代码与执行" data-en-cap="Odd Clock Divider · Code &amp; Execution">奇数分频器 · 代码与执行</figcaption>
         </figure>
       </div>
     </div>
@@ -413,12 +410,8 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </div>
       <div class="case-grid">
         <figure>
-          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-knowledge-zh.jpg" aria-label="中文案例：半导体知识问答，线圈两端电压分析，Micius-Flash-Preview 对比 DeepSeek V4 Pro"><source src="assets/case-knowledge-zh.mp4" type="video/mp4"></video>
-          <figcaption class="case-cap"><span class="case-lang">中文</span>线圈两端，究竟是 0.7 V 还是 12.7 V？</figcaption>
-        </figure>
-        <figure>
-          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-knowledge-en.jpg" aria-label="English case: semiconductor knowledge Q&amp;A, coil voltage analysis, Micius-Flash-Preview vs DeepSeek V4 Pro"><source src="assets/case-knowledge-en.mp4" type="video/mp4"></video>
-          <figcaption class="case-cap"><span class="case-lang">EN</span>Across the Coil: 0.7 V or 12.7 V?</figcaption>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-knowledge-zh.jpg" aria-label="案例：半导体知识问答，线圈两端电压分析，Micius-Flash-Preview 对比 DeepSeek V4 Pro" data-zh-src="assets/case-knowledge-zh.mp4" data-zh-poster="assets/case-knowledge-zh.jpg" data-en-src="assets/case-knowledge-en.mp4" data-en-poster="assets/case-knowledge-en.jpg"><source src="assets/case-knowledge-zh.mp4" type="video/mp4"></video>
+          <figcaption class="case-cap" data-zh-cap="线圈两端，究竟是 0.7 V 还是 12.7 V？" data-en-cap="Across the Coil: 0.7 V or 12.7 V?">线圈两端，究竟是 0.7 V 还是 12.7 V？</figcaption>
         </figure>
       </div>
     </div>
@@ -624,11 +617,20 @@ const showName=n=>n===BASE?'Qwen3.8-27B':n==='Coder390'?'Qwen3.8 Coder390':n;
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
   document.querySelectorAll('.sec>.wide,.hero-card').forEach(n=>{n.classList.add('reveal');io.observe(n)})})();
 
-/* 品牌视频语言切换 */
-(()=>{const v=$('#film');if(!v)return;const tabs=[...document.querySelectorAll('.film-tab')];
-  tabs.forEach(b=>b.onclick=()=>{const lang=b.dataset.lang;
-    tabs.forEach(x=>x.setAttribute('aria-selected',x===b));
-    v.pause();v.querySelector('source').src=`assets/film-${lang}.mp4`;v.poster=`assets/film-${lang}.jpg`;v.load()})})();
+/* 全局语言切换：三段视频统一中/英文 */
+(()=>{const KEY='micius-lang';let lang='zh';
+  try{lang=localStorage.getItem(KEY)||'zh'}catch(e){}
+  if(!['zh','en'].includes(lang))lang='zh';
+  const tabs=[...document.querySelectorAll('.lang-tab')];
+  const apply=l=>{
+    tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.lang===l));
+    document.querySelectorAll('video[data-zh-src]').forEach(v=>{
+      const src=v.dataset[l+'Src'];
+      if(v.querySelector('source').src.endsWith(src.split('/').pop()))return;
+      v.pause();v.querySelector('source').src=src;v.poster=v.dataset[l+'Poster'];v.load()});
+    document.querySelectorAll('[data-zh-cap]').forEach(c=>c.textContent=c.dataset[l+'Cap'])};
+  tabs.forEach(t=>t.onclick=()=>{lang=t.dataset.lang;try{localStorage.setItem(KEY,lang)}catch(e){};apply(lang)});
+  apply(lang)})();
 
 /* 主题 */(()=>{const r=document.documentElement,key='micius-theme';
   try{const t=localStorage.getItem(key);if(t)r.dataset.theme=t}catch(e){}
