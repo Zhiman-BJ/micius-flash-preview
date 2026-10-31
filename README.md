@@ -4,12 +4,12 @@
 
 **知满科技 · 面向科学研究与复杂工程研发的旗舰大模型**
 
-[![参数量](https://img.shields.io/badge/参数量-27B-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-27b/)
-[![上下文](https://img.shields.io/badge/上下文-256K-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-27b/)
-[![架构](https://img.shields.io/badge/架构-原生多模态-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-27b/)
-[![推理](https://img.shields.io/badge/推理-深度思考-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-27b/)
+[![参数量](https://img.shields.io/badge/参数量-27B-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-flash-preview/)
+[![上下文](https://img.shields.io/badge/上下文-256K-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-flash-preview/)
+[![架构](https://img.shields.io/badge/架构-原生多模态-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-flash-preview/)
+[![推理](https://img.shields.io/badge/推理-深度思考-01d280?style=flat-square)](https://zhiman-bj.github.io/micius-flash-preview/)
 
-[在线体验](https://platform.zhiman.cn/console/chat) · [API 接入](https://platform.zhiman.cn/console) · [发布页](https://zhiman-bj.github.io/micius-27b/) · [知满科技官网](https://zhiman.cn/)
+[在线体验](https://platform.zhiman.cn/console/chat) · [API 接入](https://platform.zhiman.cn/console) · [发布页](https://zhiman-bj.github.io/micius-flash-preview/) · [知满科技官网](https://zhiman.cn/)
 
 </div>
 
