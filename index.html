@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0b0f14">
 <meta property="og:type" content="website">
 <meta property="og:title" content="知满科技发布科学工程大模型 Micius-flash-preview">
-<meta property="og:description" content="27B 稠密模型 · 256K 上下文 · 原生多模态，支持深度思考。以半导体为首个重点场景，懂工程、会工具、能交付。">
+<meta property="og:description" content="稠密模型 · 256K 上下文 · 原生多模态，支持深度思考。以半导体为首个重点场景，懂工程、会工具、能交付。">
 <meta property="og:image" content="assets/demo-rtl-to-gds.jpg">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,8 +87,6 @@ h1{margin-top:0;font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:70
 .pill svg{flex:none}
 
 .hero-card{margin-top:clamp(24px,4vw,44px);border:1px solid var(--border);border-radius:16px;background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:clamp(16px,2vw,24px);display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:clamp(20px,3vw,40px)}
-.outline-num{font:700 clamp(64px,7vw,88px)/1 var(--sans);letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px #f1f7f7;position:relative;display:inline-block}
-.outline-num i{display:inline-block;width:.15em;height:.15em;margin-left:.06em;background:var(--brand);transform:skewX(-23deg)}
 .card-cap{font-size:13px;color:#9aa4b1;margin-top:8px;line-height:1.6}
 .stats{margin-top:14px;display:grid;gap:10px}
 .stat b{display:block;font:600 22px/1.2 var(--mono);letter-spacing:-.02em}
@@ -362,8 +360,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
     </div>
     <div class="hero-card">
       <div>
-        <div class="outline-num" aria-label="27B">27B<i></i></div>
-        <p class="card-cap">27B 稠密模型 · 256K 上下文<br>原生多模态，支持深度思考</p>
+        <p class="card-cap">稠密模型 · 256K 上下文<br>原生多模态，支持深度思考</p>
         <div class="stats">
           <div class="stat"><b id="s-avg"></b><span>12 项硬件代码平均分</span></div>
           <div class="stat"><b id="s-gain"></b><span>较 Qwen3.8-27B 提升</span></div>
@@ -372,7 +369,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </div>
       <figure>
         <div class="chart-title">
-          <h3>同尺寸模型上的提升：12 项硬件代码评测</h3>
+          <h3>相似尺寸模型上的提升：12 项硬件代码评测</h3>
           <div class="legend"><span><i class="dot b"></i>Qwen3.8-27B</span><span><i class="dot m"></i>Micius-flash-preview</span></div>
         </div>
         <div class="db" id="dumbbell" role="img" aria-label="12 项硬件代码评测中 Micius-flash-preview 与 Qwen3.8-27B 的得分对比，Micius-flash-preview 全部更高，数值见附录完整评测表"></div>
@@ -402,10 +399,9 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
     <div class="ov">
       <div>
         <p class="lede">今天，知满科技正式发布面向科学研究与复杂工程研发的旗舰大模型 <strong>Micius-flash-preview</strong>，并开放在线体验与 API 接入，模型权重后续开放。</p>
-        <p>Micius（墨子）是知满推出的科学工程大模型系列，以半导体这一知识密集、工程链路复杂、专业工具高度集中的领域作为首个重点实践场景。它是一个懂工程、会工具、能交付的 27B 模型：能够理解工艺文档、电路原理图与芯片版图，生成并调试 RTL 与 EDA 工程代码，自主调用 KiCad 及相关 EDA 工具链完成多步骤工程任务。</p>
+        <p>Micius（墨子）是知满推出的科学工程大模型系列，以半导体这一知识密集、工程链路复杂、专业工具高度集中的领域作为首个重点实践场景。它是一个懂工程、会工具、能交付的模型：能够理解工艺文档、电路原理图与芯片版图，生成并调试 RTL 与 EDA 工程代码，自主调用 KiCad 及相关 EDA 工具链完成多步骤工程任务。</p>
       </div>
       <dl class="specs">
-        <div><dt>参数量</dt><dd>27B</dd></div>
         <div><dt>上下文</dt><dd>256K</dd></div>
         <div><dt>架构</dt><dd>原生多模态</dd></div>
         <div><dt>推理</dt><dd>深度思考模式</dd></div>
@@ -413,7 +409,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </dl>
     </div>
     <div class="keys">
-      <div class="key"><h3>能力密度高</h3><p>12 项硬件代码评测平均 <strong>64.2</strong>，较同尺寸通用模型提升 15.0 分，高于 DeepSeek-V4-Pro（63.8）；半导体专项 Agent 得分 <strong>62.41</strong>，同样高于 DeepSeek-V4-Pro（57.29）。</p></div>
+      <div class="key"><h3>能力密度高</h3><p>12 项硬件代码评测平均 <strong>64.2</strong>，较相似尺寸通用模型提升 15.0 分，高于 DeepSeek-V4-Pro（63.8）；半导体专项 Agent 得分 <strong>62.41</strong>，同样高于 DeepSeek-V4-Pro（57.29）。</p></div>
       <div class="key"><h3>部署门槛低</h3><p>FP8 权重约 29 GB，<strong>单张 48 GB 级专业显卡即可部署</strong>；4-bit 量化版本约 15 GB，可运行于 24 GB 消费级显卡。</p></div>
       <div class="key"><h3>数据不出域</h3><p>支持企业内网私有化部署，满足半导体研发对设计数据安全的严格要求。</p></div>
     </div>
@@ -456,11 +452,11 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       </figure>
       <div>
         <p>Micius 的研发投入主要集中在数据飞轮：团队从 10 个学科视角和 8 个产业与标准视角分别构建半导体知识树，再把权威语料映射到知识节点，每道训练题都能追溯到具体出处。</p>
-        <p style="margin-top:8px">训练上，七个与 Micius 同尺寸的 27B 领域 Teacher 先完成专项训练，再通过多教师在线蒸馏（MOPD）把能力汇聚到同一个模型。代码与工具调用轨迹都经过沙箱实际执行验证，模型学到的是可运行、可验证的工程行为。</p>
+        <p style="margin-top:8px">训练上，七个与 Micius 相似尺寸的领域 Teacher 先完成专项训练，再通过多教师在线蒸馏（MOPD）把能力汇聚到同一个模型。代码与工具调用轨迹都经过沙箱实际执行验证，模型学到的是可运行、可验证的工程行为。</p>
         <div class="grid g3 mini" style="margin-top:12px">
           <div><span class="big">97%+</span><span class="big-cap">知识节点覆盖率</span></div>
           <div><span class="big">21 万+</span><span class="big-cap">半导体候选问答</span></div>
-          <div><span class="big">7</span><span class="big-cap">个 27B 领域 Teacher</span></div>
+          <div><span class="big">7</span><span class="big-cap">个领域 Teacher</span></div>
         </div>
       </div>
     </div>
@@ -483,8 +479,8 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
       <h2>哪里领先，哪里还有差距</h2>
     </div>
     <div class="grid g3" style="margin-bottom:12px">
-      <div class="panel"><h3>半导体知识与多模态</h3><p>13 项指标中 12 项高于同尺寸通用模型，RFSchemBench 整体和 CircuitSense 为参评模型最高，SuperGPQA 微电子并列最高。</p></div>
-      <div class="panel"><h3>硬件代码</h3><p>12 项全部高于同尺寸通用模型。平均 64.2，高于 DeepSeek-V4-Pro（63.8），接近 DeepSeek V4.1 Flash（65.4），GPT 5.6 Sol（72.3）仍领先。</p></div>
+      <div class="panel"><h3>半导体知识与多模态</h3><p>13 项指标中 12 项高于相似尺寸通用模型，RFSchemBench 整体和 CircuitSense 为参评模型最高，SuperGPQA 微电子并列最高。</p></div>
+      <div class="panel"><h3>硬件代码</h3><p>12 项全部高于相似尺寸通用模型。平均 64.2，高于 DeepSeek-V4-Pro（63.8），接近 DeepSeek V4.1 Flash（65.4），GPT 5.6 Sol（72.3）仍领先。</p></div>
       <div class="panel"><h3>通用能力</h3><p>HMMT 由 81.82 提升至 87.9；MMLU-Pro 为 84.2，低于 Qwen3.8-27B 官方结果 87.5，是后续要补齐的部分。</p></div>
     </div>
     <div class="board">
