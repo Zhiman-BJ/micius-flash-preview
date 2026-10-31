@@ -116,6 +116,15 @@ h1{margin-top:0;font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:70
 .db-head:hover{background:none}
 .db-head .db-track::before{display:none}
 .db-head .db-v,.db-head .db-g{font-family:var(--sans);font-weight:400;color:#7f8998}
+
+/* 首屏案例对比 */
+.hero-cases{margin-top:clamp(20px,3vw,32px)}
+.hero-cases .chart-title h3{color:#f1f7f7}
+.hero-cases .chart-title{margin-bottom:12px}
+.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,20px)}
+.case-grid figure{margin:0}
+.case-cap{margin-top:8px;font-size:13px;color:#9aa4b1;display:flex;align-items:center;gap:8px}
+.case-lang{flex:none;padding:1px 7px;border-radius:4px;background:#ffffff14;border:1px solid #ffffff1f;font:500 11px/1.7 var(--mono);letter-spacing:.06em;color:#4fd6a0}
 .axis{position:absolute;top:2px;font:400 11px var(--mono);transform:translateX(-50%)}
 .axis:first-child{transform:none}.axis:last-child{transform:translateX(-100%)}
 
@@ -293,6 +302,7 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
   .stat b{font-size:24px}
   .g3:not(.mini),.g2{grid-template-columns:1fr}
   #demo-pane{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr}
   .keys{grid-template-columns:1fr}
   .bench-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .demo-btn{flex-basis:170px}
@@ -364,6 +374,21 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
         </div>
         <div class="db" id="dumbbell" role="img" aria-label="12 项硬件代码评测中 Micius-27B 与 Qwen3.8-27B 的得分对比，Micius-27B 全部更高，数值见附录完整评测表"></div>
       </figure>
+    </div>
+    <div class="hero-cases">
+      <div class="chart-title">
+        <h3>实际案例：硬件代码问答，Micius-27B 对比 DeepSeek V4.1</h3>
+      </div>
+      <div class="case-grid">
+        <figure>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-clkdiv-zh.jpg" aria-label="中文案例：奇数分频器代码问答，Micius-27B 对比 DeepSeek V4.1"><source src="assets/case-clkdiv-zh.mp4" type="video/mp4"></video>
+          <figcaption class="case-cap"><span class="case-lang">中文</span>奇数分频器 · 代码与执行</figcaption>
+        </figure>
+        <figure>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/case-clkdiv-en.jpg" aria-label="English case: odd clock divider code Q&amp;A, Micius-27B vs DeepSeek V4.1"><source src="assets/case-clkdiv-en.mp4" type="video/mp4"></video>
+          <figcaption class="case-cap"><span class="case-lang">EN</span>Odd Clock Divider · Code &amp; Execution</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </header>
