@@ -127,6 +127,13 @@ h1{margin-top:0;font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:70
 .case-grid figure{margin:0}
 .case-cap{margin-top:8px;font-size:13px;color:#9aa4b1;display:flex;align-items:center;gap:8px}
 .case-lang{flex:none;padding:1px 7px;border-radius:4px;background:#ffffff14;border:1px solid #ffffff1f;font:500 11px/1.7 var(--mono);letter-spacing:.06em;color:#4fd6a0}
+
+/* 品牌视频与语言切换 */
+.hero-film{margin-top:clamp(20px,3vw,32px)}
+.film-tabs{display:flex;justify-content:center;gap:4px;margin-bottom:12px}
+.film-tab{padding:5px 16px;border-radius:999px;border:1px solid #ffffff2e;background:#ffffff0d;color:#c3cad3;font-size:13px;font-weight:500;transition:background .15s,border-color .15s,color .15s}
+.film-tab:hover{background:#ffffff1f}
+.film-tab[aria-selected=true]{background:#f1f7f7;border-color:#f1f7f7;color:#0b1210}
 .axis{position:absolute;top:2px;font:400 11px var(--mono);transform:translateX(-50%)}
 .axis:first-child{transform:none}.axis:last-child{transform:translateX(-100%)}
 
@@ -359,6 +366,13 @@ sup.dag{color:var(--muted);font-size:.72em;margin-left:1px}
         <span class="pill off"><span aria-hidden="true" style="font-size:14px;line-height:1">🤗</span>Hugging Face<span class="soon">Coming soon</span></span>
         <span class="pill off"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>技术报告<span class="soon">Coming soon</span></span>
       </div>
+    </div>
+    <div class="hero-film">
+      <div class="film-tabs" role="tablist" aria-label="视频语言切换">
+        <button class="film-tab" role="tab" aria-selected="true" data-lang="zh">中文</button>
+        <button class="film-tab" role="tab" aria-selected="false" data-lang="en">English</button>
+      </div>
+      <video id="film" class="demo-video" controls playsinline preload="metadata" poster="assets/film-zh.jpg" aria-label="Micius 品牌视频"><source src="assets/film-zh.mp4" type="video/mp4"></video>
     </div>
     <div class="hero-card">
       <div>
@@ -609,6 +623,12 @@ const showName=n=>n===BASE?'Qwen3.8-27B':n==='Coder390'?'Qwen3.8 Coder390':n;
 (()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
   document.querySelectorAll('.sec>.wide,.hero-card').forEach(n=>{n.classList.add('reveal');io.observe(n)})})();
+
+/* 品牌视频语言切换 */
+(()=>{const v=$('#film');if(!v)return;const tabs=[...document.querySelectorAll('.film-tab')];
+  tabs.forEach(b=>b.onclick=()=>{const lang=b.dataset.lang;
+    tabs.forEach(x=>x.setAttribute('aria-selected',x===b));
+    v.pause();v.querySelector('source').src=`assets/film-${lang}.mp4`;v.poster=`assets/film-${lang}.jpg`;v.load()})})();
 
 /* 主题 */(()=>{const r=document.documentElement,key='micius-theme';
   try{const t=localStorage.getItem(key);if(t)r.dataset.theme=t}catch(e){}
